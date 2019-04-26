@@ -1,9 +1,5 @@
 <?php
-if($_SERVER['HTTP_ORIGIN'] == "https://ucctubemedia.netlify.com") {
-  header("Access-Control-Allow-Origin: https://ucctubemedia.netlify.com");
-  echo 'Server connected';
-}
-
+header('Access-Control-Allow-Origin: *'); 
 include("api.php");
 
     if(
