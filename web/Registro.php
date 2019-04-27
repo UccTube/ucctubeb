@@ -1,4 +1,5 @@
 <?php
+  header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
   include("api.php");
 
     if(
