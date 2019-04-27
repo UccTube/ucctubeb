@@ -32,20 +32,6 @@
           echo "1";
         }
     }
-    // if(
-    //   isset($_POST["nombreBD"])
-    //   ||isset($_POST["apellidoBD"])
-    //   ||isset($_POST["correoBD"])
-    // ){
-    //   include("api.php");
-    //   guardarBD($_POST["nombreBD"],$_POST["apellidoBD"],$_POST["correoBD"]);
-    // }
-
-    // if(isset($_POST["correoUR"])){
-    //   include("api.php");
-    //   buscarUsuarioExistente($_POST["correoUR"]);
-    // }
-  
 ?>
 
 
