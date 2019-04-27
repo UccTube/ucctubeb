@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
-    include("conexionDB.php");
+    require_once 'conexionDB.php';
 
     /**
      * TABLAS DE LA BASE DE DATOS

@@ -1,7 +1,5 @@
 <?php
   header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
-  include("api.php");
-
     if(
         isset($_POST["nombre"])
         ||isset($_POST["apellido"])
@@ -42,10 +40,12 @@
       ||isset($_POST["apellidoBD"])
       ||isset($_POST["correoBD"])
     ){
+      include("api.php");
       guardarBD($_POST["nombreBD"],$_POST["apellidoBD"],$_POST["correoBD"]);
     }
 
     if(isset($_POST["correoUR"])){
+      include("api.php");
       buscarUsuarioExistente($_POST["correoUR"]);
     }
   
