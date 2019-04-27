@@ -7,13 +7,9 @@
         ||isset($_POST["contraseña"])
         ||isset($_POST["confirmar"])
     ){
-      $nombre=$_POST["nombre"];
-      $apellido=$_POST["apellido"];
-      $correo=$_POST["correo"];
-      $contraseña=$_POST["contraseña"];
-      $contraseña1=$_POST["confirmar"];
-      validar($nombre,$apellido,$correo,$contraseña,$contraseña1);
+      validar($_POST["nombre"],$_POST["apellido"],$_POST["correo"],$_POST["contraseña"],$_POST["confirmar"]);
     }
+
     function validar($nombre, $apellidos, $correo, $contraseña, $contraseña1){
         if (
           $nombre == "" ||
