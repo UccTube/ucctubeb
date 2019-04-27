@@ -8,6 +8,7 @@
         ||isset($_POST["confirmar"])
     ){
       validar($_POST["nombre"],$_POST["apellido"],$_POST["correo"],$_POST["contraseña"],$_POST["confirmar"]);
+      echo "Entro";
     }
 
     function validar($nombre, $apellidos, $correo, $contraseña, $contraseña1){
