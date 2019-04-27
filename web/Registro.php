@@ -1,13 +1,5 @@
 <?php
-$origin = $_SERVER['HTTP_ORIGIN'];
-$allowed_domains = [
-    'https://ucctubemedia.netlify.com/registro',
-    'https://ucctubemedia.netlify.com'
-];
-if (in_array($origin, $allowed_domains)) {
-    header('Access-Control-Allow-Origin: ' . $origin);
-}
-include("api.php");
+  include("api.php");
 
     if(
         isset($_POST["nombre"])
