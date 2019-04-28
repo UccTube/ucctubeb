@@ -7,7 +7,6 @@
         ||isset($_POST["contraseña"])
         ||isset($_POST["confirmar"])
     ){
-      echo $_POST["nombre"];
       validar($_POST["nombre"],$_POST["apellido"],$_POST["correo"],$_POST["contraseña"],$_POST["confirmar"]);
     }
 
@@ -32,6 +31,13 @@
           echo "1";
         }
     }
+
+    if(isset($_POST["correoUR"])){
+      require 'api.php';
+      buscarUsuarioExistente($_POST["correoUR"]);
+    }
+
+
 ?>
 
 

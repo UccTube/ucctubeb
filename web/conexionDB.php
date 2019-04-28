@@ -17,9 +17,11 @@ header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
         */    
         public static function getInstance(){
             if(is_null(static::$instance)){
-
-                static::$instance = pg_connect("host=ec2-54-225-76-136.compute-1.amazonaws.com port=5432 dbname=d4sfb4ich1jnls user=mspiqmfpfrused password=117c6d8cbb98e74e26390338ca6af6e141b50cfadbcc59dc139e2c2ac0a8d4dd sslmode=require") or die("No se pudo conectar");
+                $database_url = "postgres://ysidyyoamevpdw:ca82bb304ca34d81fbb2202b664bd31846d5e68bfd3f0a23768bda2a51e234f4@ec2-54-221-201-212.compute-1.amazonaws.com:5432/dc3cif617368vq";
+                
+                static::$instance  = pg_connect(getenv($database_url)) or die ("No se pudo conectar");
             }
+            
             return static::$instance;
             
         }
