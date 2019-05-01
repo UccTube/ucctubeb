@@ -22,13 +22,13 @@
       if (  $vacio == true ) 
       {
         echo "Todos los campos son obligatorios";
-      } else if ($contraseña !== $contraseña1) {
+      } else if ($informacion[3] !== $informacion[4]) {
         echo "Las contraseñas no coinciden";
-      } else if (strlen($contraseña) < 8) {
+      } else if (strlen($informacion[3]) < 8) {
         echo "La contraseña es poco segura";
-      } else if(!filter_var($correo, FILTER_VALIDATE_EMAIL)){
+      } else if(!filter_var($informacion[2], FILTER_VALIDATE_EMAIL)){
         echo "El correo electrónico no es válido";
-      }else if(preg_match("/@campusucc.edu.co$/", $correo)!=1){
+      }else if(preg_match("/@campusucc.edu.co$/", $informacion[2])!=1){
         echo "El correo eletrónico debe pertenecer a la Universidad Cooperativa de Colombia";
       }else{
         echo "1";
