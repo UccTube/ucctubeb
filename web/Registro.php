@@ -14,7 +14,6 @@
     function validar($informacion){
       $info_num = count($informacion);
         $vacio = false;
-      echo $info_num;
       for($x = 0; $x < $info_num; $x++) {
         if($informacion[$x]==""){
           $vacio = true;
