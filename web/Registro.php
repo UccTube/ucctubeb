@@ -1,42 +1,57 @@
 <?php
   header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
+
+  /**
+   * Función para validar los campos
+   */
     if(
-        isset($_POST["nombre"])
-        ||isset($_POST["apellido"])
-        ||isset($_POST["correo"])
-        ||isset($_POST["contraseña"])
-        ||isset($_POST["confirmar"])
+        isset($_POST["validar"])
     ){
-      validar($_POST["nombre"],$_POST["apellido"],$_POST["correo"],$_POST["contraseña"],$_POST["confirmar"]);
+      $validar = explode(",", $_POST["validar"]);
+      validar($validar);
     }
 
-    function validar($nombre, $apellidos, $correo, $contraseña, $contraseña1){
-        if (
-          $nombre == "" ||
-          $apellidos == "" ||
-          $correo == "" ||
-          $contraseña == "" ||
-          $contraseña1 == ""
-        ) {
-          echo "Todos los campos son obligatorios";
-        } else if ($contraseña !== $contraseña1) {
-          echo "Las contraseñas no coinciden";
-        } else if (strlen($contraseña) < 8) {
-          echo "La contraseña es poco segura";
-        } else if(!filter_var($correo, FILTER_VALIDATE_EMAIL)){
-            echo "El correo electrónico no es válido";
-        }else if(preg_match("/@campusucc.edu.co$/", $correo)!=1){
-            echo "El correo eletrónico debe pertenecer a la Universidad Cooperativa de Colombia";
-        }else{
-          echo "1";
+    function validar($informacion){
+      $info_num = count($informacion);
+        $vacio = false;
+
+      for($x = 0; $x < $info_num; $x++) {
+        if($informacion[$x]==""){
+          $vacio = true;
         }
+      }
+      if (  $vacio == true ) 
+      {
+        echo "Todos los campos son obligatorios";
+      } else if ($contraseña !== $contraseña1) {
+        echo "Las contraseñas no coinciden";
+      } else if (strlen($contraseña) < 8) {
+        echo "La contraseña es poco segura";
+      } else if(!filter_var($correo, FILTER_VALIDATE_EMAIL)){
+        echo "El correo electrónico no es válido";
+      }else if(preg_match("/@campusucc.edu.co$/", $correo)!=1){
+        echo "El correo eletrónico debe pertenecer a la Universidad Cooperativa de Colombia";
+      }else{
+        echo "1";
+      }
+    }
+  /**
+  * Función para buscar si el usuario existe en la base de datos-->>Redirige a metodosDB.php
+  */
+    if(isset($_POST["usuarioRegistrado"])){
+      require 'metodosDB.php';
+      buscarUsuarioCorreo($_POST["usuarioRegistrado"], 'Buscar', 'Usuario');
     }
 
-    if(isset($_POST["correoUR"])){
-      require 'api.php';
-      buscarUsuarioExistente($_POST["correoUR"]);
+  /**
+  * Función para guardar el usuario en la base de datos
+  */
+    if(
+      isset($_POST["guardarDatos"])
+    ){
+      require 'metodosDB.php';      
+      guardarBD($_POST["guardarDatos"], 'Insertar', 'Usuario');
     }
-
 
 ?>
 
