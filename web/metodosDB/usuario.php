@@ -3,14 +3,17 @@
     /**
     * Buscar usuarios
     */
-    function buscarUsuario($informacion){
 
+    $buscar_usuario = "SELECT correo FROM usuario WHERE correo ='".$informacion[2]."'";
+
+    function buscarUsuario($informacion){
+        $db = Db_conexion::getInstance();
+        $result = pg_query($db, $buscar_usuario);
     }
 
-    function buscarUsuarioCorreo($informacion){
+    function buscarUsuarioRegistrado($informacion){
         $db = Db_conexion::getInstance();
-        $query = "SELECT correo FROM usuario WHERE correo ='".$informacion[2]."'";
-        $result = pg_query($db, $query);
+        $result = pg_query($db, $buscar_usuario);
         echo pg_num_rows($result);
     }
 

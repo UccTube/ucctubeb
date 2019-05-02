@@ -40,7 +40,7 @@
     if(isset($_POST["usuarioRegistrado"])){
       echo 'ENTRO';
       require 'metodosDB.php';
-      buscarUsuarioCorreo($_POST["usuarioRegistrado"], 'Buscar', 'Usuario');
+      dirigirInformacion($_POST["usuarioRegistrado"], 'Buscar', 'Usuario');
     }
 
   /**
@@ -50,7 +50,7 @@
       isset($_POST["guardarDatos"])
     ){
       require 'metodosDB.php';      
-      guardarBD($_POST["guardarDatos"], 'Insertar', 'Usuario');
+      dirigirInformacion($_POST["guardarDatos"], 'Insertar', 'Usuario');
     }
 
 ?>
