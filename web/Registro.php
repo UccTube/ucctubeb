@@ -38,7 +38,6 @@
   * Función para buscar si el usuario existe en la base de datos-->>Redirige a metodosDB.php
   */
     if(isset($_POST["usuarioRegistrado"])){
-      echo 'ENTRO';
       require 'metodosDB.php';
       dirigirInformacion($_POST["usuarioRegistrado"], 'Buscar', 'Usuario');
     }
