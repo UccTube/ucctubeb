@@ -4,6 +4,7 @@
     * Buscar usuarios
     */
 
+    echo 'ENTRO';
     $buscar_usuario = "SELECT correo FROM usuario WHERE correo ='".$informacion[2]."'";
 
     function buscarUsuario($informacion){
