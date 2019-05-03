@@ -46,9 +46,7 @@
         switch ($opcion){
             case "Usuario":
                 require 'metodosDB/usuario.php';
-                if($metodo[1]=="Registrado"){
-                    buscarUsuario($informacion);
-                }
+                if($metodo[1]=="Registrado"){  buscarUsuario($informacion); }
                 break;
             case "Registros":
                 totalRegistros($informacion);
