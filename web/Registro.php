@@ -39,7 +39,7 @@
   */
     if(isset($_POST["usuarioRegistrado"])){
       require 'metodosDB.php';
-      dirigirInformacion($_POST["usuarioRegistrado"], 'Buscar', 'Usuario');
+      dirigirInformacion($_POST["usuarioRegistrado"], 'Buscar', 'Usuario Registrado');
     }
 
   /**
