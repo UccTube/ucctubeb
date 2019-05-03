@@ -28,8 +28,6 @@
         echo "La contraseña es poco segura";
       } else if(!filter_var($informacion[2], FILTER_VALIDATE_EMAIL)){
         echo "El correo electrónico no es válido";
-      }else if(preg_match("/@campusucc.edu.co$/", $informacion[2])!=1){
-        echo "El correo eletrónico debe pertenecer a la Universidad Cooperativa de Colombia";
       }else{
         echo "1";
       }
