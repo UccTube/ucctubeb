@@ -43,7 +43,7 @@
 
         $metodo = explode($opcion, " ");
 
-        switch ($metodo[1]){
+        switch ($metodo[0]){
             case "Usuario":
                 require 'metodosDB/usuario.php';
                 if($metodo[1]=="Registrado"){  buscarUsuarioRegistrado($informacion); }
