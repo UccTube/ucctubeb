@@ -41,8 +41,7 @@
     */
     function buscarInformacion($informacion, $opcion){
 
-        $metodo = explode($opcion, " ");
-        echo $opcion." -- ".$metodo[0]." -- ".$metodo[1];
+        $metodo = explode($opcion, "-");
 
         switch ($metodo[0]){
             case "Usuario":
