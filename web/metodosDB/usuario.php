@@ -14,7 +14,7 @@
         $db = Db_conexion::getInstance();
         $buscar_usuario = "SELECT correo FROM usuario WHERE correo ='".$informacion[2]."'";
         $result = pg_query($db, $buscar_usuario);
-        echo "ENTRO ".pg_num_rows($result);
+        echo pg_num_rows($result);
     }
 
 ?>        
