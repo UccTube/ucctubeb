@@ -41,7 +41,7 @@
     */
     function buscarInformacion($informacion, $opcion){
 
-        $metodo = explode($opcion, "-");
+        $validar = explode("-", $opcion);
 
         switch ($metodo[0]){
             case "Usuario":
