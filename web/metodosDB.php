@@ -44,9 +44,11 @@
     function buscarInformacion($informacion, $opcion){
 
         $metodo = explode("-", $opcion);
+        echo "1";
 
         switch ($metodo[0]){
             case "Usuario":
+            echo "2";
                 require 'metodosDB/usuario.php';
                 if($metodo[1]=="Registrado"){  buscarUsuarioRegistrado($informacion); }
                 break;

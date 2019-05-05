@@ -5,6 +5,7 @@
   */
     if(isset($_POST["usuarioRegistrado"])){
       require 'metodosDB.php';
+      echo 'entroq';
       dirigirInformacion($_POST["usuarioRegistrado"], 'Buscar', 'Usuario-Registrado');
     }
 
