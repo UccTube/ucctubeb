@@ -1,5 +1,5 @@
 <?php
-    header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
+    header('Access-Control-Allow-Origin: *');
     require_once 'Registro.php';
 
     $uri = $_SERVER['REQUEST_URI'];

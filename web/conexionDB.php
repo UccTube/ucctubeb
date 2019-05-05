@@ -1,5 +1,5 @@
 <?php
-    header('Access-Control-Allow-Origin: https://ucctubemedia.netlify.com');
+    header('Access-Control-Allow-Origin: *');
     class Db_conexion{
         /** 
          * Instancia singleton de la base de datos
