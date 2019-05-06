@@ -15,7 +15,7 @@
       isset($_POST["guardarDatos"])
     ){
       require 'metodosDB.php';      
-      dirigirInformacion($_POST["guardarDatos"], 'Insertar', 'Usuario');
+      dirigirInformacion($_POST["guardarDatos"], 'Insertar', 'Usuario-Registrar');
     }
 
 ?>
