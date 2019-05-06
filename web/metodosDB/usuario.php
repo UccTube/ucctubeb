@@ -27,32 +27,32 @@
 
     function registrarUsuario($informacion){
         echo "ENTRO REGISTRAR USER";
-        $db = Db_conexion::getInstance();
-        $total = totalRegistros("usuario");
-        $idInfo = generarID($total, "IU");
-        $idUsuario = generarID($total, "U");
-        $idTipo = "TU1-05052019"; 
-        $nombre = $informacion[0];
-        $apellidos = $informacion[1];
-        $correo = $informacion[2];
-        /** 
-         * FALTA EL MÉTODO PARA BUSCAR EL TIPO DE USUARIO,
-         * ADEMÁS, FALTA IDEAR UNA FORMA DE IDENTIFICAR EL TIPO DE USUARIO
-        */
-        $query1 = "INSERT INTO info_usuario(id_info_usuario,nombres,apellidos) VALUES ('$idInfo', '$nombre', '$apellidos')";
+        // $db = Db_conexion::getInstance();
+        // $total = totalRegistros("usuario");
+        // $idInfo = generarID($total, "IU");
+        // $idUsuario = generarID($total, "U");
+        // $idTipo = "TU1-05052019"; 
+        // $nombre = $informacion[0];
+        // $apellidos = $informacion[1];
+        // $correo = $informacion[2];
+        // /** 
+        //  * FALTA EL MÉTODO PARA BUSCAR EL TIPO DE USUARIO,
+        //  * ADEMÁS, FALTA IDEAR UNA FORMA DE IDENTIFICAR EL TIPO DE USUARIO
+        // */
+        // $query1 = "INSERT INTO info_usuario(id_info_usuario,nombres,apellidos) VALUES ('$idInfo', '$nombre', '$apellidos')";
 
-        $query2 = "INSERT INTO usuario(id_usuario,correo,id_tipo_usuario,id_info_usuario) VALUES('$idUsuario', '$correo', '$idTipo', '$idInfo')";
+        // $query2 = "INSERT INTO usuario(id_usuario,correo,id_tipo_usuario,id_info_usuario) VALUES('$idUsuario', '$correo', '$idTipo', '$idInfo')";
   
-        $result1 = pg_query($db, $query1);
-        $result2 = pg_query($db, $query2);
+        // $result1 = pg_query($db, $query1);
+        // $result2 = pg_query($db, $query2);
 
-        if($result1 and $result2){
-            echo "Registro exitoso";
-            pg_query("COMMIT") or die("Commit fallido");
-        }else{
-            echo "Fallo al insertar datos";
-            pg_query("ROLLBACK") or die("Rollback fallido");
-        }
+        // if($result1 and $result2){
+        //     echo "Registro exitoso";
+        //     pg_query("COMMIT") or die("Commit fallido");
+        // }else{
+        //     echo "Fallo al insertar datos";
+        //     pg_query("ROLLBACK") or die("Rollback fallido");
+        // }
     }
 
     //TOTAL DE REGISTROS DE UNA TABLA
