@@ -73,7 +73,7 @@
         switch ($opcion){
             case "Usuario":
                 require 'metodosDB/usuario.php';
-                registarUsuario($informacion);
+                registrarUsuario($informacion);
                 break;
             default:
                 echo "No se reconoce la opción seleccionada";
