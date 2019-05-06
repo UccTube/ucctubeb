@@ -26,6 +26,7 @@
     }
 
     function registrarUsuario($informacion){
+        echo "ENTRO REGISTRAR USER";
         $db = Db_conexion::getInstance();
         $total = totalRegistros("usuario");
         $idInfo = generarID($total, "IU");

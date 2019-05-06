@@ -21,7 +21,6 @@
                 buscarInformacion($informacion, $opcion);
                 break;
             case "Insertar":
-            echo 'Entro en switch insertar';
                 añadirInformacion($informacion, $opcion);
                 break; 
             case "Modificar":
@@ -71,12 +70,10 @@
     * Añadir a la base de datos
     */
     function añadirInformacion($informacion, $opcion){
-        echo 'Entro en añadirInfo';
         switch ($opcion){
             case "Usuario":
-            echo 'Entro en añadir user';
-                // require 'metodosDB/usuario.php';
-                // registarUsuario($informacion);
+                require 'metodosDB/usuario.php';
+                registarUsuario($informacion);
                 break;
             default:
                 echo "No se reconoce la opción seleccionada";
