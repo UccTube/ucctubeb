@@ -47,10 +47,10 @@
         $result2 = pg_query($db, $query2);
 
         if($result1 and $result2){
-            echo "Registro exitoso";
+            echo "1";
             pg_query("COMMIT") or die("Commit fallido");
         }else{
-            echo "Fallo al insertar datos";
+            echo "0";
             pg_query("ROLLBACK") or die("Rollback fallido");
         }
     }
