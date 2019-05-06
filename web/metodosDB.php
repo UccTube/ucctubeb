@@ -16,7 +16,6 @@
      * Método para dirigir la información a la opción seleccionada
      */
     function dirigirInformacion($informacion, $crud, $opcion){
-        echo 'Entro en dirigir';
         switch ($crud){
             case "Buscar":
                 buscarInformacion($informacion, $opcion);
