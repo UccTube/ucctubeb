@@ -26,14 +26,15 @@
     }
 
     function registrarUsuario($informacion){
+        $datos = explode(",",$informacion);
         $db = Db_conexion::getInstance();
         $total = totalRegistros("usuario");
         $idInfo = generarID($total, "IU");
         $idUsuario = generarID($total, "U");
         $idTipo = "TU1-05052019"; 
-        $nombre = $informacion[0];
-        $apellidos = $informacion[1];
-        $correo = $informacion[2];
+        $nombre = $datos[0];
+        $apellidos = $datos[1];
+        $correo = $datos[2];
         /** 
          * FALTA EL MÉTODO PARA BUSCAR EL TIPO DE USUARIO,
          * ADEMÁS, FALTA IDEAR UNA FORMA DE IDENTIFICAR EL TIPO DE USUARIO
