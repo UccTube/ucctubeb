@@ -48,9 +48,7 @@
         switch ($metodo[0]){
             case "Usuario":
                 require 'metodosDB/usuario.php';
-                if($metodo[1]=="Registrado"){  buscarUsuarioRegistrado($informacion); }else if($metodo[1]=="Registrar"){
-                    registrarUsuario($informacion);
-                }
+                if($metodo[1]=="Registrado"){  buscarUsuarioRegistrado($informacion); }
                 break;
             case "Registros":
                 totalRegistros($informacion);
@@ -71,6 +69,17 @@
     /**
     * Añadir a la base de datos
     */
+    function añadirInformacion($informacion, $opcion){
+        switch ($opcion){
+            case "Usuario":
+                require 'metodosDB/usuario.php';
+                registarUsuario($informacion);
+                break;
+            default:
+                echo "No se reconoce la opción seleccionada";
+                break;    
+        }
+    }
 
     /**
     * Eliminar de la base de datos
