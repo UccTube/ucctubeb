@@ -14,6 +14,7 @@
     if(
       isset($_POST["guardarDatos"])
     ){
+      echo "ENTRO";
       require 'metodosDB.php';      
       dirigirInformacion($_POST["guardarDatos"], 'Insertar', 'Usuario');
     }
