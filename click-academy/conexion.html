@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!--Hojas de estilo-->
+    <link rel="stylesheet" href="./styles/menustyle.css" />
+    <link rel="stylesheet" href="./styles/menusesionstyle.css" />
+    <link rel="stylesheet" href="./styles/NuevoVideo.css" />
+    <!---->
+    <!--Tipos de letra-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Black+Ops+One|Cantarell|Cardo&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!---->
+    <!--Función para el menú lateral-->
+    <script>
+      function toggleNavPanel(x, maxW) {
+        var panel = document.getElementById(x);
+        if (panel.style.width == maxW) {
+          panel.style.width = "0px";
+        } else {
+          panel.style.width = maxW;
+        }
+      }
+    </script>
+    <!---->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+    
+
+
+  <body>
+   
+    <div class="BarraNavegacion">
+        <ul>
+          <li class="MenuLateral">
+            <button onclick="toggleNavPanel('SeccionesMenuLateral','250px')">
+              <i class="fas col fa-bars"></i>
+            </button>
+  
+            <div id="SeccionesMenuLateral">
+              <a href="PrincipalSesion.html" class="activo"
+                ><i class="fas colactivo fa-university"></i> Inicio
+              </a>
+              <a href="#"><i class="fas col fa-fire"></i> Tendencias </a>
+              <a href="#"
+                ><i class="fas col fa-chalkboard-teacher"></i>Suscripciones</a
+              >
+              <hr />
+  
+              <a href="#"><i class="fas col fa-archive"></i>Biblioteca</a>
+              <a href="#"><i class="fas col fa-history"></i> Historial</a>
+              <a href="#"><i class="fas col fa-clock"></i> Ver mas tarde</a>
+              <a href="#"><i class="fas col fa-star"></i> Favoritos</a>
+              <hr />
+  
+              <a href="#"><i class="fas col fa-question-circle"></i> Ayuda</a>
+              <hr />
+  
+              <p>2019 UccTube</p>
+            </div>
+          </li>
+  
+          <li class="logo">
+            <a href="PrincipalSesion.html" class="logo"
+              ><img src="./imagenes/utlogo.png" width="130px" height="55px"
+            /></a>
+          </li>
+  
+          <div class="barrabusqueda">
+            <form action="">
+              <input type="text" placeholder="Buscar" name="search" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+  
+          <li style="float:right" class="MenuLateralUsuario">
+            <button onclick="toggleNavPanel('SeccionesMenuUsuario','230px')">
+              <i class="fas col fa-user"></i>
+            </button>
+  
+            <div id="SeccionesMenuUsuario">
+              <a class="Sections_user">
+                Nombre de Usuario Contraseña
+              </a>
+              <hr />
+              <a class="Sections_user"
+                ><i class="fas col fa-user-tie"></i> Mi canal
+              </a>
+              <hr />
+              <button onclick="logout()" class="Sections_user">
+                <i class="fas col fa-door-open"></i>Salir
+              </button>
+            </div>
+          </li>
+  
+          <li style="float:right">
+            <a href="#Bell" title="Notificaciones">
+              <i class="fas col fa-bell"></i>
+            </a>
+          </li>
+  
+          <li style="float:right">
+            <a href="#Message">
+              <i class="fas col fa-envelope"></i>
+            </a>
+          </li>
+  
+          <li style="float:right">
+            <a href="#Apps" title="Aplicaciones">
+              <i class="fab col fa-buromobelexperte"></i>
+            </a>
+          </li>
+  
+          <li style="float:right">
+            <a href="SubirVideo.html" title="Subir videos">
+              <i class="fas col fa-cloud-upload-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--Opción de subir el vídeo-->
+    <div class="ContenedorPrincipal">
+        <div class="ContenedorDividido">
+          <div id="SubirVideo">
+            <input
+              type="file"
+              value="upload"
+              id="fileButton"
+              class="VideoSelecter"
+              accept="video/mp4,video/x-m4v,video/*"
+            />
+            <label for="fileButton" id="SeleccionarVideo">
+              <div class="AgregarVideo">
+                <i class="AgregarVideoIcono fas fa-cloud-upload-alt"> </i>
+              </div>
+              <div class="AgregarVideoTexto">
+                <div class="posicionar">
+                  <h1>Selecciona archivos para subir</h1>
+                  <progress value="0" max="100" id="uploader">0%</progress>
+                </div>
+              </div>
+            </label>
+            <!--<div class="Borde-diagonal"></div>-->
+          </div>
+          <div id="VideoPreviewDiv">
+            <div id="VideoPreview">
+              <div id="VideoP">
+                <video id="fitDiv" controls>
+                  <source src="mov_bbb.mp4" id="video_here" />
+                  Tu buscador no soporta el video de HTML5
+                </video>
+              </div>
+            </div>
+          </div>
+  
+          <!--Información del video-->
+          <div id="InformacionVideo" class="ContenedorDividido">
+            <form id="FormularioInformacion" action="../Ucc_Tube/php/InsertarVideo.php" method="POST">
+              <input
+                type="text"
+                id="nombrevideo"
+                placeholder="Nombre del vídeo"
+                class="TextoInformacion"
+                name="NombreVideo"
+              />
+              <textarea
+                name="message"
+                id="mensaje"
+                rows="5"
+                placeholder="Mensaje"
+                class="TextoInformacion"
+                name="Mensaje"
+              ></textarea>
+              <input
+                type="text"
+                id="categoria"
+                placeholder="Categoría"
+                class="TextoInformacion"
+                name="Categoria"
+              />
+              <div id="PrivacidadVideo" class="ContenedorDividido">
+                <li>
+                  <input type="radio" value="1" name="Privacidad" id="Public" />
+                  <label for="Public">Público</label>
+                  <div class="radiobutton"></div>
+                </li>
+                <li>
+                  <input type="radio" value="2" name="Privacidad" id="Private" />
+                  <label for="Private">Privado</label>
+                  <div class="radiobutton"></div>
+                </li>
+                <li>
+                  <input type="radio" value="3" name="Privacidad" id="Protect" />
+                  <label for="Protect">Protegido</label>
+                  <div class="radiobutton"></div>
+                </li>
+              </div>
+              <button class="BotonInformacion" type="submit" id="submit">
+                Subir vídeo
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--subir video-->
+
+  </body>
+</html>
