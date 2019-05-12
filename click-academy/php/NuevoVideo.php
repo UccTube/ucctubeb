@@ -244,20 +244,20 @@
     </div>
 
     <!--subir video-->
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
     <script>
       // Initialize Firebase
       var firebaseConfig = {
-    apiKey: "AIzaSyB_PY_yBSbnlOfGPyLknxiY0g2G9Bz639Q",
-    authDomain: "ucc-tube.firebaseapp.com",
-    databaseURL: "https://ucc-tube.firebaseio.com",
-    projectId: "ucc-tube",
-    storageBucket: "ucc-tube.appspot.com",
-    messagingSenderId: "492743461618",
-    appId: "1:492743461618:web:c50345deb5787c74"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  apiKey: "AIzaSyCvU_j6FWIFRN1TrKx1f-91ky2E5n3AqoM",
+  authDomain: "click-academy.firebaseapp.com",
+  databaseURL: "https://click-academy.firebaseio.com",
+  projectId: "click-academy",
+  storageBucket: "click-academy.appspot.com",
+  messagingSenderId: "372540974455",
+  appId: "1:372540974455:web:de23c4eaf36bfdc0"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
       // Obtener Elementos
       var uploader = document.getElementById("uploader");
 

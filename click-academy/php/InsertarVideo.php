@@ -26,6 +26,7 @@ if(isset($_POST['NombreVideo'])){
  
 }
      $id_archivo = uniqid('archivo_');
+     
         pg_query ("INSERT INTO archivos  (id_archivo,_url,nombre,descripcion,id_usuarios,id_categorias)  
         VALUES ('$id_archivo ','$url','$Nombre','$Descripcion','22','Tecn-01')") ;
         echo pg_last_error($connect);

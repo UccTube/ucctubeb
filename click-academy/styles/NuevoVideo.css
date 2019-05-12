@@ -41,7 +41,7 @@ body {
 .ContenedorPrincipal #SubirVideo {
   position: absolute;
   top: 0;
-  width: 80%;
+  width: 50%;
   height: 15%;
   margin: 0 auto;
   background-color: rgb(240, 247, 247);

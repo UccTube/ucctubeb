@@ -133,6 +133,7 @@
       <div class="ContenedorDividido">
         <div id="SubirVideo">
           <input type="file" id="fileButton" class="VideoSelecter" />
+
           <label for="fileButton" id="SeleccionarVideo">
             <div class="AgregarVideo">
               <i class="AgregarVideoIcono fas fa-cloud-upload-alt"> </i>
@@ -187,22 +188,23 @@
               name="tablacontenido"
             ></textarea>
 
-            <select class="mdb-select md-form colorful-select dropdown-danger">
-              <option value="0">Seleccione una opción</option>
-
-              <!--  <?php 
-            include("conexion.php");             
+            <!--  <?php 
+            include("conexion.php");          
+            <option value="0">Seleccione una opción</option>   
             $SQL = "SELECT nombre_categoria FROM categorias " ;
-
             $result = pg_query($SQL) or die('Query failed: ' . pg_last_error()); 
             $rows = pg_numrows($result); 
-
             for($i=1;$i<=$rows; $i++){
                 $line = pg_fetch_array($result, null, PGSQL_ASSOC);
                  echo " <option value='1'> $line[nombre_categoria] </option>  ";
                }
             ?> -->
-            </select>
+            <div class="selector-categorias">
+              Seleccione una opción
+              <select
+                class="mdb-select md-form colorful-select dropdown-danger"
+              ></select>
+            </div>
 
             <input
               type="text"
@@ -225,36 +227,10 @@
       </div>
     </div>
 
-    <!--controladores-->
-    <div id="controles">
-      <button
-        onclick="pausar()"
-        type="button"
-        id="pausar"
-        class="btn btn-primary"
-      >
-        Pausar
-      </button>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
-      <button
-        onclick="reanudar()"
-        type="button"
-        id="reanudar"
-        class="btn btn-primary"
-      >
-        Reanudar
-      </button>
-      <button
-        onclick="cancelar()"
-        type="button"
-        id="cancelar"
-        class="btn btn-primary"
-      >
-        Cancelar
-      </button>
-    </div>
-    <!-- incluir firebase -->
-    <!--Código para el funcionamiento del inicio de sesión-->
+    <!--Código para el funcionamiento de subir video-->
     <script src="./scripts/SubirVideo.js"></script>
   </body>
 </html>

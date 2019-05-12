@@ -31,6 +31,7 @@ break;
 
 
 
+
 // $SQL = "SELECT * FROM usuario " ;
 // $result = pg_query($SQL) or die('Query failed: ' . pg_last_error());
 // $rows = pg_numrows($result);
