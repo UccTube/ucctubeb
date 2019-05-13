@@ -1,26 +1,100 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyCvU_j6FWIFRN1TrKx1f-91ky2E5n3AqoM",
-  authDomain: "click-academy.firebaseapp.com",
-  databaseURL: "https://click-academy.firebaseio.com",
-  projectId: "click-academy",
-  storageBucket: "click-academy.appspot.com",
-  messagingSenderId: "372540974455",
-  appId: "1:372540974455:web:de23c4eaf36bfdc0"
+  apiKey: "AIzaSyB_PY_yBSbnlOfGPyLknxiY0g2G9Bz639Q",
+  authDomain: "ucc-tube.firebaseapp.com",
+  databaseURL: "https://ucc-tube.firebaseio.com",
+  projectId: "ucc-tube",
+  storageBucket: "ucc-tube.appspot.com",
+  messagingSenderId: "492743461618",
+  appId: "1:492743461618:web:c50345deb5787c74"
 };
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// Servicios de APIs Firebase
-var storageService = firebase.storageService();
+// Obtener Elementos
 
-//funcion para ingresar los datos basicos del video obtenidos de SubirVideo.html
-function ingresardatos() {
-  // Obtener Elementos
-  let file = document.getElementById("fileButton").value;
-  var extenson = fileValidation(file);
-  alert("Tipo " + extenson);
-  var name = +new Date() + "-" + file.name;
-  var refStorage = storageService.ref("extenson").child(name);
-  var uploadTask = refStorage.put(file);
+var uploader = document.getElementById("uploader");
+
+// Servicios de APIs Firebase
+var authService = firebase.auth();
+var storageService = firebase.storage();
+var url_;
+
+window.onload = function() {
+  authService.signInAnonymously().catch(function(error) {
+    console.error("Detectado error de autenticación", error);
+  });
+
+  //manejador de evento para el input file
+  document
+    .getElementById("fileButton")
+    .addEventListener("change", function(evento) {
+      evento.preventDefault();
+
+      var archivo = evento.target.files[0];
+      let file = document.getElementById("fileButton").value;
+      alert(file);
+      var extenson = fileValidation(file);
+      alert("Tipo " + extenson);
+      subirArchivo(archivo, extenson);
+    });
+
+  //manejadores de eventos para los botones de control de la subida
+  // document.getElementById("pausar").addEventListener("click", function() {
+  //   if (uploadTask && uploadTask.snapshot.state == "running") {
+  //     uploadTask.pause();
+  //     console.log("pausada");
+  //   }
+  // });
+
+  // document.getElementById("reanudar").addEventListener("click", function() {
+  //   if (uploadTask && uploadTask.snapshot.state == "paused") {
+  //     uploadTask.resume();
+  //     console.log("reanudada");
+  //   }
+  // });
+  // document.getElementById("cancelar").addEventListener("click", function() {
+  //   if (
+  //     uploadTask &&
+  //     (uploadTask.snapshot.state == "paused" ||
+  //       uploadTask.snapshot.state == "running")
+  //   ) {
+  //     if (uploadTask.snapshot.state == "paused") {
+  //       uploadTask.resume();
+  //     }
+  //     uploadTask.cancel();
+  //     console.log("cancelada");
+  //   }
+  // });
+};
+
+// defino el uploadTask como variable global
+var uploadTask;
+function subirArchivo(archivo, extension) {
+  var refStorage = storageService.ref(extension).child(archivo.name);
+  uploadTask = refStorage.put(archivo);
+
+  // El evento donde comienza el control del estado de la subida
+  uploadTask.on(
+    "state_changed",
+    registrandoEstadoSubida,
+    errorSubida,
+    finSubida
+  );
+
+  //Callbacks para controlar los distintos instantes de la subida
+  function registrandoEstadoSubida(snapshot) {
+    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    uploader.value = percentage;
+  }
+
+  function errorSubida(err) {
+    console.log("Error al subir el archivo", err);
+  }
+  function finSubida() {
+    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      console.log("File available at", downloadURL);
+    });
+  }
 }
 
 //validar la extension de los archivos que se desean subir

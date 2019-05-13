@@ -132,8 +132,12 @@
     <div class="ContenedorPrincipal">
       <div class="ContenedorDividido">
         <div id="SubirVideo">
-          <input type="file" id="fileButton" class="VideoSelecter" />
-
+          <input
+            type="file"
+            value="upload"
+            id="fileButton"
+            class="VideoSelecter"
+          />
           <label for="fileButton" id="SeleccionarVideo">
             <div class="AgregarVideo">
               <i class="AgregarVideoIcono fas fa-cloud-upload-alt"> </i>
@@ -145,15 +149,7 @@
               </div>
             </div>
           </label>
-        </div>
-
-        <div id="VideoPreviewDiv">
-          <div id="VideoPreview">
-            <div id="VideoP">
-              <source src="" id="video_here" />
-              Tu buscador no soporta el video de HTML5
-            </div>
-          </div>
+          <!--<div class="Borde-diagonal"></div>-->
         </div>
 
         <!--Información del video-->
@@ -224,11 +220,14 @@
             </button>
           </form>
         </div>
+        <button onclick="ingresardatos()">
+          Subir
+        </button>
       </div>
     </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- incluir firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 
     <!--Código para el funcionamiento de subir video-->
     <script src="./scripts/SubirVideo.js"></script>
