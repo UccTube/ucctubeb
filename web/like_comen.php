@@ -1,7 +1,8 @@
 <?php
+// ingresa los likes, dislikes, y comentarios de los archivos
+
+
 include("conexion.php");
-
-
 
 # Saber si el voto es negativo o positivo
 $voto = htmlentities($_GET['voto']);
@@ -24,7 +25,6 @@ $Id_usuario = htmlentities($_GET['id_usuario']);
         echo("$line[id_usuario]");
         echo("Ya voto");
         $regis=true;
-  
     }
   
 }

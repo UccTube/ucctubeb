@@ -1,6 +1,8 @@
 <?php
+
+//carga todas la url que tiene el usuario registrado
+
 include("conexion.php");
-alert("UsuarioVideos.php");
 $obj = json_decode($_GET["x"], false);
 
 $stmt = $conn->prepare("SELECT _url FROM archivos ");

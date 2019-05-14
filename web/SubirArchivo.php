@@ -1,5 +1,7 @@
 <?php
 
+// sube los archivos del usuario al sistema
+
 include("conexion.php");
 ob_start();
 
@@ -21,7 +23,7 @@ if(isset($_POST['NombreVideo'])){
     $Categoria = $_POST['Categoria'];
     "<script>
     alert('null');
-                 
+                  
 </script>";
  
 }
