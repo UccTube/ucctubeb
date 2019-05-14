@@ -36,6 +36,6 @@ if(isset($_POST['NombreVideo'])){
               //  window.history.back();
              //                
     </script>";
-    header("Location: ../php/Usuario.php"); 
+    header("Location: ../php/Usuario.html"); 
   
     ?>
