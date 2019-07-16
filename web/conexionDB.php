@@ -22,6 +22,7 @@
                 $port = "5432";
                 $user = "ysidyyoamevpdw";
                 $password = "ca82bb304ca34d81fbb2202b664bd31846d5e68bfd3f0a23768bda2a51e234f4";
+                
                 static::$instance  = pg_connect("host = $host port=$port  dbname=$dbname user=$user password=$password sslmode=require") or die ("No se pudo conectar");
             }
             
